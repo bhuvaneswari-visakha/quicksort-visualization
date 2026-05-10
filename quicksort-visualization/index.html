@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickSort Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>QuickSort Algorithm Visualization</h1>
+        
+        <div class="controls">
+            <button id="generateBtn" class="btn btn-primary">Generate New Array</button>
+            <button id="sortBtn" class="btn btn-success">Start QuickSort</button>
+            <button id="resetBtn" class="btn btn-secondary">Reset</button>
+            
+            <div class="control-group">
+                <label for="arraySize">Array Size: <span id="arraySizeValue">20</span></label>
+                <input type="range" id="arraySize" min="5" max="50" value="20">
+            </div>
+            
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="stepMode" checked>
+                    Step-by-Step Mode
+                </label>
+            </div>
+            
+            <div class="control-group" id="speedControl">
+                <label for="speed">Speed: <span id="speedValue">300</span>ms</label>
+                <input type="range" id="speed" min="100" max="2000" value="300">
+            </div>
+        </div>
+
+        <div id="stepControls" class="step-controls" style="display: none;">
+            <button id="nextStepBtn" class="btn btn-success btn-large">
+                Next Step →
+            </button>
+            <p class="step-instruction">Click "Next Step" to proceed through each operation</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Comparisons:</span>
+                <span id="comparisons" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Swaps:</span>
+                <span id="swaps" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Status:</span>
+                <span id="status" class="stat-value">Ready</span>
+            </div>
+        </div>
+
+        <div id="arrayContainer" class="array-container"></div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #3498db;"></div>
+                <span>Default</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #e74c3c;"></div>
+                <span>Pivot</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #f39c12;"></div>
+                <span>Comparing</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #9b59b6;"></div>
+                <span>Swapping</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #2ecc71;"></div>
+                <span>Sorted</span>
+            </div>
+        </div>
+
+        <div class="info">
+            <h3>How QuickSort Works:</h3>
+            <ol>
+                <li>Choose a pivot element (usually the last element)</li>
+                <li>Partition: rearrange elements so smaller ones are before pivot, larger ones after</li>
+                <li>Recursively apply the same process to the sub-arrays</li>
+                <li>Time Complexity: O(n log n) average, O(n²) worst case</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
